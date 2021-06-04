@@ -32,9 +32,9 @@ def break_reminder(pref_time):
             try:
                 notification.title = "Break Time!!"
                 notification.message = "Do you know taking little breaks between your work is way of improving your efficiency."
-                notification.icon = "logo.png"
+                notification.icon = "images/logo.png"
                 notification.send(block=False)
-                playsound("speech.mp3")
+                playsound("sound/speech.mp3")
             except:
                 print("No speech found")
             last_time = datetime.datetime.now()
