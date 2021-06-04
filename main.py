@@ -40,5 +40,4 @@ def break_reminder(pref_time):
             last_time = datetime.datetime.now()
 
 
-# Run Script
 main()
