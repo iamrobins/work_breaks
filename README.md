@@ -4,7 +4,7 @@ Simple yet powerful script 🤖
 
 feel free to contribute a GUI version.
 
-<img src="#">
+<img src="https://github.com/itsOwen/work_breaks/blob/master/images/notify.png">
 
 Its a very simple yet powerful script created to take care of you and your health. It tells you when to take breaks between yout work.
 
