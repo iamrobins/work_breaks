@@ -6,7 +6,7 @@ from notifypy import Notify
 from custom_types import AppState
 
 notification = Notify()
-continue_reminder_time: int = 5 #5 minutes
+continue_reminder_time: int = 300 #5 minutes
 
 def main():
     print("Simple break reminder script\n")
@@ -18,9 +18,9 @@ def send_notification(title: str, message: str, icon: str) -> None:
     """
     Sends notification to user
     """
-    notification.title = "Break Time!!"
-    notification.message = "Do you know taking little breaks between your work is way of improving your efficiency."
-    notification.icon = "images/logo.png"
+    notification.title = title
+    notification.message = message
+    notification.icon = icon
     notification.send(block=False)
 
 
