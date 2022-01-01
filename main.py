@@ -70,5 +70,5 @@ def break_reminder(pref_time: int) -> None:
                 print("No speech found")
             last_time = datetime.datetime.now()
 
-
-main()
+if __name__ == "__main__":
+    main()
