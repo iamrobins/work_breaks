@@ -29,8 +29,8 @@ def prefered_time_inp() -> int:
     """Returns time in seconds"""
     while True:
         try:
-            pref_time = 60 * \
-                int(input("Enter your break preference in minutes: "))
+            float_input = float(input("Enter your break preference in minutes: "))
+            pref_time = round(60 * float_input)
             return pref_time
         except ValueError:
             print("Please provide a valid value “for example 20” ")
