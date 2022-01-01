@@ -4,6 +4,7 @@ import threading
 from playsound import playsound
 from notifypy import Notify
 from custom_types import AppState
+from sys import exit
 
 notification = Notify()
 continue_reminder_time: int = 300 #5 minutes
@@ -31,9 +32,11 @@ def prefered_time_inp() -> int:
             pref_time = 60 * \
                 int(input("Enter your break preference in minutes: "))
             return pref_time
-        except:
+        except ValueError:
             print("Please provide a valid value “for example 20” ")
-            continue
+        except KeyboardInterrupt:
+            print("\nExiting program")
+            exit(1)
 
 
 def continue_reminder(state) -> None:
