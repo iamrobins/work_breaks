@@ -5,6 +5,7 @@ from playsound import playsound
 from notifypy import Notify
 from custom_types import AppState
 from sys import exit, stderr
+import gui
 
 notification = Notify()
 continue_reminder_time: int = 300 #5 minutes
@@ -14,6 +15,32 @@ def main():
     pref_time: int = prefered_time_inp()
     print("Script Started !!")
     break_reminder(pref_time)
+
+def get_input_from_gui() -> int:
+    """
+    Gets user's input, for prefered minutes, from gui window
+    """
+    graphics = gui.GUI()
+    user_minutes = graphics.minutes
+    
+    while (user_minutes <= 0):
+        graphics.create_input_gui()
+        user_minutes = graphics.minutes
+    return user_minutes
+
+def get_continue_input_from_gui() -> int:
+    """
+    Gets user's input, for whether they want to keep receiving 
+    notifications, or change the prefered time, from gui window
+    """
+    continue_window = gui.GUI()
+    repeat = continue_window.repeat
+
+    while(repeat == -1):
+        continue_window.create_continue_gui()
+        repeat = continue_window.repeat
+    return repeat
+
 
 def send_notification(title: str, message: str, icon: str) -> None:
     """
